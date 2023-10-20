@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get('http://localhost:1337/api/blogs/');
+    const response = await axios.get('http://localhost:1337/api/blogs/')
     const data = response.data.data;
 
     return {
