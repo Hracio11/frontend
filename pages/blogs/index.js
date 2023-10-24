@@ -3,19 +3,16 @@ import styles from '../../styles/Home.module.css';
 import axios from 'axios';
 
 export async function getServerSideProps() {
-  //try {
-    const response = await axios.get('http://localhost:1337/api/blogs');
-    const data = response.data;
-    console.log(data)
+  try {
+    const response = await axios.get('http://localhost:1337/api/blogs/');
+    const data = response.data.data;
+
     return {
       props: { data },
     };
-  /*} catch (error) {
-    //console.error('Error al cargar datos:', error);
-    return {
-      props: {  },
-    };
-  }*/
+  } catch (error) {
+    console.error('Error al cargar datos:', error);
+  }
 }
 
 
